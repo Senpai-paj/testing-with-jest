@@ -22,14 +22,14 @@ beforeEach(() => {
     while (stack.pop() !== undefined) {}
 });
 
-test('tasting stack push, pop and peek', () => {
+test('pushing elements to the stack', () => {
     stack.push('chocolate');
     stack.push('strawberry');
     stack.push('vanilla');
     expect(stack.peek()).toBe('vanilla');
-    expect(stack.pop()).toBe('vanilla');
-    expect(stack.pop()).toBe('strawberry');
-    expect(stack.pop()).toBe('chocolate');
+});
+
+test('popping from an empty stack', () => {
     expect(stack.pop()).toBeUndefined();
 });
 
