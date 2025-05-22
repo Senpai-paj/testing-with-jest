@@ -1,5 +1,9 @@
 const stack = require('../src/stack');
 
+beforeEach(() => {
+    while (stack.pop() !== undefined) {}
+});
+
 test('peek on empty stack returns undefined', () => {
     expect(stack.peek()).toBeUndefined();
 });
@@ -18,9 +22,6 @@ test('peek on stack with two or more elements returns the top element', () => {
     expect(stack.peek()).toBe(42);
 });
 
-beforeEach(() => {
-    while (stack.pop() !== undefined) {}
-});
 
 test('pushing elements to the stack', () => {
     stack.push('chocolate');
